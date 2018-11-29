@@ -1,0 +1,11 @@
+<div id="app">
+         <!--<div><video #video id="video" width="640" height="480" type='video/ogg; codecs="avc1.42E01E, mp4a.40.2"' preload  autoplay></video></div> -->
+      <img #video style="-webkit-user-select: none;" src="http://172.21.1.122:8080/stream/camera-1" width="640" height="480" crossorigin>
+        <div><button id="snap" (click)="capture()">Snap Photo</button></div>
+        <canvas #canvas id="canvas" width="640" height="480"></canvas>
+        <ul>
+            <li *ngFor="let c of captures">
+                <img src="{{ c }}" height="50" />
+            </li>
+        </ul>
+</div>
