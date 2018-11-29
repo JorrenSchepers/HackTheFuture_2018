@@ -7,13 +7,15 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FeedComponent } from './feed/feed.component';
 import { RouterModule } from '@angular/router';
 import { NavigationComponent } from './navigation/navigation.component';
+import {FaceDetectionService} from './services/faceDetection.service';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    NavigationComponent
+    NavigationComponent,
+    FeedComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     ], {useHash: true} )
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+    FaceDetectionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
