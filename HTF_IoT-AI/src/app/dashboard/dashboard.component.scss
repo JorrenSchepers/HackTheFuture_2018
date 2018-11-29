@@ -1,0 +1,16 @@
+img{
+    width: 100%;
+    min-height: 40vh;
+    max-height: 85vh;
+    object-fit: cover;
+}
+
+.container-fluid{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    flex-grow: 1;
+    margin: 0.5%;
+}
