@@ -36,6 +36,6 @@ export class FeedComponent implements OnInit {
   public capture(){
     var context = this.canvas.nativeElement.getContext("2d").drawImage(this.video.nativeElement, 0, 0, 640, 480);
 
-    this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
+    this.captures.unshift(this.canvas.nativeElement.toDataURL("image/png"));
   }
 }
