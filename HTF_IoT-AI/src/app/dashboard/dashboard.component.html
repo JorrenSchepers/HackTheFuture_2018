@@ -1,5 +1,5 @@
 <div class="container-fluid">
-        <div class="card" *ngFor="let stream of streams" [style.width]="width + 'vw'" [routerLink]="['/feed', stream]">
+        <div class="card" *ngFor="let stream of streams" [style.max-width]="width + 'vw'" [routerLink]="['/feed', stream]">
             <div class="card-block">
                 <img src="http://172.21.1.122:8080/stream/{{stream}}" alt="stream for {{stream}}">
             </div>
