@@ -2,10 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
+
+import { StreamService } from './services/stream.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +18,7 @@ import { NavigationComponent } from './navigation/navigation.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot([
       { path: "dashboard", component: DashboardComponent},
@@ -22,7 +26,9 @@ import { NavigationComponent } from './navigation/navigation.component';
     ], {useHash: true} )
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
+  providers: [
+    StreamService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
