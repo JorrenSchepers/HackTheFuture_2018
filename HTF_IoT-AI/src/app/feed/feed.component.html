@@ -1,11 +1,23 @@
-<div id="app">
-         <!--<div><video #video id="video" width="640" height="480" type='video/ogg; codecs="avc1.42E01E, mp4a.40.2"' preload  autoplay></video></div> -->
-      <img #video style="-webkit-user-select: none;" src="http://172.21.1.122:8080/stream/camera-1" width="640" height="480" crossorigin>
-        <div><button id="snap" (click)="capture()">Snap Photo</button></div>
-        <canvas #canvas id="canvas" width="640" height="480"></canvas>
-        <ul>
-            <li *ngFor="let c of captures">
-                <img src="{{ c }}" height="50" />
-            </li>
-        </ul>
+<div class="container-fluid" id="app">
+  <div class="row">
+    <div class="col-md-9">
+      <img #video style="-webkit-user-select: none;" src="{{url}}" width="640" height="480"
+        crossorigin>
+      <div><button class="btn btn-dark" id="snap" (click)="capture()">Snap Photo</button></div>
+      <canvas #canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+    <div class="col-md-3" *ngIf="captures.length>=1">
+      <div class="card">
+        <div class="card-body body-scrollable-full">
+          <div class="card-block">
+            <div class="row">
+              <div class="element" *ngFor="let c of captures" style="margin:auto">
+                <img src="{{ c }}" [style.max-height]="30 + 'vh'" style="padding:1%" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

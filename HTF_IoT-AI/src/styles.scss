@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.body-scrollable-full{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 74vh;           
+    width: 97%;
+    position: absolute;
+}
+.cast-element{
+    width: inherit;
+    margin: auto;
+}
