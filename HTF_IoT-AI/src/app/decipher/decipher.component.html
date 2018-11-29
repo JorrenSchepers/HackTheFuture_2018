@@ -1,3 +1,11 @@
-<div class="container-fluid">
-<input type="file" (change)="fileChanged($event)">
+<div class="container-fluid" style="margin:1%">
+  <input class="form-control-file" type="file" (change)="fileChanged($event)" style="display: inline-block">
+  <button class="btn btn-dark" (click)="decipher()">Decipher</button>
+  <div *ngIf="letters.length>=1">
+    <ul>
+      <li *ngFor="let l of letters">
+        {{l}}
+      </li>
+    </ul>
+  </div>
 </div>
