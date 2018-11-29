@@ -1,4 +1,5 @@
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 //https://x-team.com/blog/webcam-image-capture-angular/
 
 @Component({
@@ -7,7 +8,8 @@ import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
   styleUrls: ['./feed.component.scss']
 })
 export class FeedComponent implements OnInit {
-  url: string = "http://172.21.1.122:8080/stream/camera-1";
+  stream : string;
+  url: string;
   @ViewChild("video")
   public video: ElementRef;
   
@@ -16,11 +18,15 @@ export class FeedComponent implements OnInit {
 
   public captures: Array<any>;
 
-  public constructor(){
+  public constructor(private route : ActivatedRoute){
     this.captures = [];
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params =>{
+      this.stream = params['streamId'];
+      this.url = `http://172.21.1.122:8080/stream/${this.stream}`;
+  });
   }
 
   public ngAfterViewInit(){

@@ -14,9 +14,13 @@ export class DashboardComponent implements OnInit {
   constructor(private streamSvc : StreamService){}
 
   ngOnInit(){
-    this.streamSvc.getStreams().subscribe(streams => this.streams = streams.streams);
-    //this.streams = ["camera-1", "camera-1", "camera-1", "camera-1", "camera-1", "camera-1", "camera-1", "camera-1", "camera-1", "camera-1"]
+    //this.streamSvc.getStreams().subscribe(streams => this.streams = streams.streams);
+    this.streams = ["camera-1", "camera-1", "camera-1", "camera-1", "camera-1"]
     this.count = this.streams.length
-    this.width  = 25 - (this.count % 3)
+    this.width  = 30 - (this.count % 3)
+  }
+
+  goToFeed(){
+    
   }
 }
