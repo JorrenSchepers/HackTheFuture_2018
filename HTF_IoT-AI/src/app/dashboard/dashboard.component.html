@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <!--<div class="card-deck">-->
+        <div class="card" *ngFor="let stream of streams" [style.width]="width + 'vw'">
+            <div class="card-block">
+                <img src="http://172.21.1.122:8080/stream/{{stream}}" alt="stream for {{stream}}">
+            </div>
+        </div>
+    <!--</div>-->
+</div>
