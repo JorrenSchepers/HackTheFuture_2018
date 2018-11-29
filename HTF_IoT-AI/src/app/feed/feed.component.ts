@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class FeedComponent implements OnInit {
   stream : string;
   url: string;
+  
   @ViewChild("video")
   public video: ElementRef;
   
