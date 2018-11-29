@@ -33,7 +33,7 @@ import { StreamService } from './services/stream.service';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
-    FaceDetectionService
+    FaceDetectionService,
     StreamService
   ],
   bootstrap: [AppComponent]

@@ -22,8 +22,7 @@ export class FeedComponent implements OnInit {
 
   public captures: Array<any>;
 
-  public constructor(private route : ActivatedRoute){
-  public constructor(private _svc: FaceDetectionService){
+  public constructor(private route : ActivatedRoute, private _svc: FaceDetectionService){
     this.captures = [];
   }
 
