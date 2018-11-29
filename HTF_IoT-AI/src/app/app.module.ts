@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FeedComponent } from './feed/feed.component';
 import { DecipherComponent } from './decipher/decipher.component'
+import {FaceDetectionService} from './services/faceDetection.service';
 
 import { StreamService } from './services/stream.service';
 
@@ -35,6 +36,7 @@ import { StreamService } from './services/stream.service';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [
+    FaceDetectionService,
     StreamService
   ],
   bootstrap: [AppComponent]
